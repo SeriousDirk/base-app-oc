@@ -9,12 +9,18 @@ local buffer = require("doubleBuffering")
 local application = GUI.application()
 
 -- Create and add template object to application
-local object = application:addChild(GUI.object(3, 2, 10, 50))
+local bar = application:addChild(GUI.object(3, 2, 10, 50))
 -- Create own :draw() method and make it render green rectangle
-object.draw = function(object)
-  buffer.drawRectangle(object.x, object.y, object.width, object.height, 0x919191, 0x0, " ")
+bar.draw = function(bar)
+  buffer.drawRectangle(bar.x, bar.y, bar.width, bar.height, 0x919191, 0x0, " ")
 end
 
+
+local light = bar:addChild(GUI.object(3, 2, 5, 5))
+
+light.draw = function(light)
+  buffer.drawRectangle(light.x, light.y, light.width, light.height, 0xf5e342, 0x0, " ")
+end 
 --------------------------------------------------------------------------------
 
 -- Draw application content once on screen when program starts
