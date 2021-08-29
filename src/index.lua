@@ -9,10 +9,10 @@ local buffer = require("doubleBuffering")
 local application = GUI.application()
 
 -- Create and add template object to application
-local object = application:addChild(GUI.object(3, 2, 50, 10))
+local object = application:addChild(GUI.object(3, 2, 10, 50))
 -- Create own :draw() method and make it render green rectangle
 object.draw = function(object)
-  buffer.drawRectangle(object.x, object.y, object.width, object.height, 0x33FF80, 0x0, " ")
+  buffer.drawRectangle(object.x, object.y, object.width, object.height, 0x919191, 0x0, " ")
 end
 
 --------------------------------------------------------------------------------
